@@ -50,8 +50,22 @@ export default function DataTable() {
     let filtered = allCharacters.current.filter(
       (data) => data.gender === genderSymbol
     );
-    setCharacters(filtered);
+    let sumOfHeights = filtered.reduce(
+      (acc, curr) => acc + Number(curr.height.split("cm")[0]),
+      0
+    );
+    setCharacters((prev) => {
+      return [
+        ...filtered,
+        {
+          id: filtered.length,
+          name: "Total",
+          height: calcSumOFHeight(Number(sumOfHeights))
+        }
+      ];
+    });
   };
+
   const calcSumOFHeight = (height) => {
     const ft = parseInt(height * 0.0328084);
     const inches = ((height * 0.0328084 - ft) * 0.393700788).toFixed(2);
