@@ -57,7 +57,7 @@ export default function DataTable() {
   const calcSumOFHeight = (height) => {
     const ft = parseInt(height * 0.0328084);
     const inches = ((height * 0.0328084 - ft) * 0.393700788).toFixed(2);
-    const heightText = `${height} cm (${ft}ft/${inches}in)`;
+    const heightText = `${height}cm (${ft}ft/${inches}in)`;
     return heightText;
   };
 
