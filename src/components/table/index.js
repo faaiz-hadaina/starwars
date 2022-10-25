@@ -13,13 +13,13 @@ const columns = [
   {
     field: "height",
     headerName: "Height",
-    width: 180,
+    width: 180
   },
   {
     field: "gender",
     headerName: "G",
-    width: 80,
-  },
+    width: 80
+  }
 ];
 
 export default function DataTable() {
@@ -69,7 +69,7 @@ export default function DataTable() {
         let characterUrl = character.split("/api/")[1]; //https://swapi.dev/api/films/1/
         const response = await Client({
           method: "GET",
-          path: characterUrl,
+          path: characterUrl
         });
         characters.push(response.data);
       }
@@ -82,12 +82,13 @@ export default function DataTable() {
         return {
           ...item,
           id: index,
+          height: item.height + "cm",
           gender:
             item.gender === "male"
               ? "M"
               : item.gender === "female"
               ? "F"
-              : "n/a",
+              : "n/a"
         };
       });
       allCharacters.current = [
@@ -95,16 +96,16 @@ export default function DataTable() {
         {
           id: mapped.length + 1,
           name: mapped.length + 1,
-          height: calcSumOFHeight(Number(sumOfHeights)),
-        },
+          height: calcSumOFHeight(Number(sumOfHeights))
+        }
       ];
       setCharacters([
         ...mapped,
         {
-          id: mapped.length + 1,
-          name: mapped.length + 1,
-          height: calcSumOFHeight(Number(sumOfHeights)),
-        },
+          id: mapped.length,
+          name: "Total",
+          height: calcSumOFHeight(Number(sumOfHeights))
+        }
       ]);
       setFetchingTableData(false);
     })();
@@ -113,7 +114,7 @@ export default function DataTable() {
   const genderData = [
     { url: "Male", title: "Male" },
     { url: "Female", title: "Female" },
-    { url: "All", title: "All" },
+    { url: "All", title: "All" }
   ];
   const handleChange = (event) => {
     setSelectedGenderData(event.target.value);
@@ -126,7 +127,7 @@ export default function DataTable() {
         height: 600,
         padding: "12px",
         width: "100%",
-        backgroundColor: "#fff",
+        backgroundColor: "#fff"
       }}
     >
       <div style={{ width: "120px", marginLeft: "14px", marginBottom: "16px" }}>
@@ -145,7 +146,7 @@ export default function DataTable() {
             margin: "auto",
             objectFit: "cover",
             width: 100,
-            height: 100,
+            height: 100
           }}
         />
       ) : (

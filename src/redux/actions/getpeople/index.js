@@ -6,10 +6,10 @@ export const getPeople = (data) => async (dispatch, getState) => {
     const characters = [];
     dispatch({ type: types.ACTION_START });
     for (let character of data) {
-      let characterUrl = character.split("/api/")[1]; //https://swapi.dev/api/films/1/
+      let characterUrl = character.split("/api/")[1];
       const response = await Client({
         method: "GET",
-        path: characterUrl,
+        path: characterUrl
       });
       characters.push(response.data);
     }
