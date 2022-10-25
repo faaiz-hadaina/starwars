@@ -1,7 +1,6 @@
 import { Alert, Snackbar } from "@mui/material";
 import React from "react";
 import { useSelector } from "react-redux";
-// import {clearError} from "../"
 
 const SnackBar = () => {
   const message = useSelector((state) => state?.movieReducer?.movies || []);

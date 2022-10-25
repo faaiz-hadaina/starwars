@@ -1,10 +1,8 @@
 import * as React from "react";
 import { DataGrid } from "@mui/x-data-grid";
-import { useDispatch, useSelector } from "react-redux";
-import { getPeople } from "../../redux/actions/getpeople";
+import { useSelector } from "react-redux";
 import loader from "../../assets/loader.gif";
 import { Client } from "../../services/client";
-import { toBePartiallyChecked } from "@testing-library/jest-dom/dist/matchers";
 import DropDown from "../dropdown";
 
 const columns = [
@@ -66,7 +64,7 @@ export default function DataTable() {
       setFetchingTableData(true);
       const characters = [];
       for (let character of characterUrls) {
-        let characterUrl = character.split("/api/")[1]; //https://swapi.dev/api/films/1/
+        let characterUrl = character.split("/api/")[1];
         const response = await Client({
           method: "GET",
           path: characterUrl

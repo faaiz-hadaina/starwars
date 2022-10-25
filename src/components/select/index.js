@@ -1,8 +1,4 @@
 import * as React from "react";
-import Box from "@mui/material/Box";
-import MenuItem from "@mui/material/MenuItem";
-import FormControl from "@mui/material/FormControl";
-import Select from "@mui/material/Select";
 import { useDispatch, useSelector } from "react-redux";
 import { getMovies } from "../../redux/actions/getmovies";
 import { getMovie } from "../../redux/actions/getmovie";

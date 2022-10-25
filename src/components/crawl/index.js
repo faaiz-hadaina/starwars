@@ -1,7 +1,5 @@
 import * as React from "react";
-
 import { useSelector } from "react-redux";
-
 import Marquee from "react-fast-marquee";
 
 export default function Crawl() {
