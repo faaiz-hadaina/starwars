@@ -15,7 +15,7 @@ const columns = [
   },
   {
     field: "gender",
-    headerName: "G",
+    headerName: "Gender",
     width: 80
   }
 ];
